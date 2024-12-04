@@ -28,4 +28,8 @@ export const postRouter = createTRPCRouter({
 
     return post ?? null;
   }),
+
+  delete: publicProcedure.query(async ({ ctx }) => {
+    return "deleted";
+  }),
 });
