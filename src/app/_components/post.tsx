@@ -7,7 +7,6 @@ import styles from "../index.module.css";
 
 export function LatestPost() {
   const [latestPost] = api.post.getLatest.useSuspenseQuery();
-  const { data } = api.post.delete.useQuery();
 
   const utils = api.useUtils();
   const [name, setName] = useState("");
@@ -27,7 +26,6 @@ export function LatestPost() {
       ) : (
         <p className={styles.showcaseText}>You have no posts yet.</p>
       )}
-      <p className={styles.showcaseText}>{data}</p>
 
       <form
         onSubmit={(e) => {

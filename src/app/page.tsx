@@ -14,7 +14,7 @@ export default async function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>
-            Create <span className={styles.pinkSpan}>T3</span> App
+            ניהול <span className={styles.pinkSpan}>פנסיוני</span> בקלות
           </h1>
           <div className={styles.cardRow}>
             <Link
@@ -22,10 +22,9 @@ export default async function Home() {
               href="https://create.t3.gg/en/usage/first-steps"
               target="_blank"
             >
-              <h3 className={styles.cardTitle}>First Steps →</h3>
+              <h3 className={styles.cardTitle}>צעדים ראשונים </h3>
               <div className={styles.cardText}>
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
+                רק הבסיס - כל מה שצריך לדעת בשביל להתחיל, מבטיחים זה צ׳יפס
               </div>
             </Link>
             <Link
@@ -33,10 +32,10 @@ export default async function Home() {
               href="https://create.t3.gg/en/introduction"
               target="_blank"
             >
-              <h3 className={styles.cardTitle}>Documentation →</h3>
+              <h3 className={styles.cardTitle}>מדריכים למתקדמים</h3>
               <div className={styles.cardText}>
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
+                רק אם בא לכם כאן אנחנו מסבירים תכונות מתקדמות שיכולים לעשות לכם
+                חיים קלים עוד יותר
               </div>
             </Link>
           </div>
