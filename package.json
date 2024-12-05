@@ -16,7 +16,7 @@
     "preview": "next build && next start",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "postinstall": "prisma generate && prisma migrate deploy && next build"
+    "postinstall": "db:migrate && next build"
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
