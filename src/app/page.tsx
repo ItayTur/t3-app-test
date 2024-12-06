@@ -22,7 +22,7 @@ export default async function Home() {
               href="https://create.t3.gg/en/usage/first-steps"
               target="_blank"
             >
-              <h3 className={styles.cardTitle}>צעדים ראשונים </h3>
+              <h2 className={styles.cardTitle}>צעדים ראשונים </h2>
               <div className={styles.cardText}>
                 רק הבסיס - כל מה שצריך לדעת בשביל להתחיל, מבטיחים זה צ׳יפס
               </div>
@@ -32,7 +32,7 @@ export default async function Home() {
               href="https://create.t3.gg/en/introduction"
               target="_blank"
             >
-              <h3 className={styles.cardTitle}>מדריכים למתקדמים</h3>
+              <h2 className={styles.cardTitle}>מדריכים למתקדמים</h2>
               <div className={styles.cardText}>
                 רק אם בא לכם כאן אנחנו מסבירים תכונות מתקדמות שיכולים לעשות לכם
                 חיים קלים עוד יותר
