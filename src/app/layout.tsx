@@ -4,6 +4,8 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "@app/trpc/react";
+import { ClerkProvider, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInBtn } from "./_components/SignInButton";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -11,14 +13,64 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    backgroundColor: "#f4f5f7", // Soft background color
+    padding: "20px",
+  },
+  card: {
+    backgroundColor: "#ffffff", // White card for contrast
+    borderRadius: "10px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Subtle shadow
+    padding: "20px",
+    width: "100%",
+    maxWidth: "400px", // Makes it responsive
+  },
+  heading: {
+    fontSize: "1.5rem",
+    fontWeight: "600",
+    marginBottom: "10px",
+    color: "#34495e", // Muted blue color
+    textAlign: "center",
+  },
+  clerkComponent: {
+    marginTop: "20px",
+  },
+  hover: {
+    backgroundColor: "#16A085",
+  },
+  active: {
+    backgroundColor: "#128C7E",
+  },
+} as const;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={GeistSans.className}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={GeistSans.className}>
+          <SignedOut>
+            <div style={styles.container}>
+              <div style={styles.card}>
+                <h1 style={styles.heading}>!ברוכים הבאים</h1>
+                <SignInBtn />
+                <div style={styles.clerkComponent}></div>
+              </div>
+            </div>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </SignedIn>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
