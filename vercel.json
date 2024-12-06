@@ -1,5 +1,3 @@
 {
-    "build": {
-      "command": "yarn vercel-build"
-    }
+    "build": "yarn vercel-build"
   }
